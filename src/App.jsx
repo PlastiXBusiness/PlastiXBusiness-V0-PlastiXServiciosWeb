@@ -1,22 +1,36 @@
 import { useState } from 'react'
 import './App.css'
 
+const countries = [
+  { code: '+34', flag: '🇪🇸', name: 'España' },
+  { code: '+52', flag: '🇲🇽', name: 'México' },
+  { code: '+57', flag: '🇨🇴', name: 'Colombia' },
+  { code: '+54', flag: '🇦🇷', name: 'Argentina' },
+  { code: '+56', flag: '🇨🇱', name: 'Chile' },
+  { code: '+51', flag: '🇵🇪', name: 'Perú' },
+  { code: '+1', flag: '🇺🇸', name: 'Estados Unidos' },
+]
+
 const highlights = [
   {
     title: 'Acceso',
     description: 'Migración de cuenta a Corsair Connect (si no se ha hecho previamente)',
+    icon: 'key',
   },
   {
     title: 'Estado',
     description: 'Configuración total de tu cuenta con onboarding incluido.',
+    icon: 'pulse',
   },
   {
     title: 'Activos',
     description: 'Control y cálculo exacto de tus créditos de plástico.',
+    icon: 'wallet',
   },
   {
     title: 'Gestión',
     description: 'Configuración de seguridad para tus créditos de plástico.',
+    icon: 'shield',
   },
 ]
 
@@ -65,10 +79,46 @@ const plans = [
 ]
 
 const whatsappNumber = '34694200966'
+const defaultCountry = countries[0]
+
+function HighlightIcon({ icon }) {
+  if (icon === 'key') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14 3a7 7 0 1 0 4.95 11.95L21 17v2h-2v2h-3v-3.17l-1.05-1.05A7 7 0 0 0 14 3Zm0 3a4 4 0 1 1 0 8a4 4 0 0 1 0-8Z" />
+      </svg>
+    )
+  }
+
+  if (icon === 'pulse') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12h4l2-4l3 8l2-4h7" />
+      </svg>
+    )
+  }
+
+  if (icon === 'wallet') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H19v3H6.5a.5.5 0 0 0 0 1H20v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7.5Z" />
+        <path d="M20 11h-3a2 2 0 1 0 0 4h3" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3l7 3v5c0 4.5-2.7 7.9-7 10c-4.3-2.1-7-5.5-7-10V6l7-3Z" />
+      <path d="M9.5 12l1.7 1.7l3.3-3.4" />
+    </svg>
+  )
+}
 
 function App() {
   const [formData, setFormData] = useState({
     name: '',
+    countryCode: defaultCountry.code,
     phone: '',
     service: 'Análisis y Configuración (50€ - Pago único)',
     message: '',
@@ -88,7 +138,7 @@ function App() {
     const text = [
       'Hola, vengo desde la web de PlastiX.',
       `Nombre: ${formData.name}`,
-      `WhatsApp / Teléfono: ${formData.phone}`,
+      `WhatsApp / Teléfono: ${formData.countryCode}${formData.phone}`,
       `Servicio de interés: ${formData.service}`,
       `Mensaje sobre mi situación: ${formData.message}`,
     ].join('\n')
@@ -156,7 +206,9 @@ function App() {
           <div className="highlights-grid">
             {highlights.map((item) => (
               <article className="highlight-card" key={item.title}>
-                <div className="highlight-icon"></div>
+                <div className="highlight-icon">
+                  <HighlightIcon icon={item.icon} />
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
@@ -250,14 +302,32 @@ function App() {
 
             <label className="field">
               <span>WhatsApp / Teléfono</span>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+34 600 000 000"
-                required
-              />
+              <div className="phone-field">
+                <select
+                  className="country-select"
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
+                  aria-label="País"
+                >
+                  {countries.map((country) => (
+                    <option key={country.code} value={country.code}>
+                      {country.flag} {country.name} ({country.code})
+                    </option>
+                  ))}
+                </select>
+
+                <input
+                  type="tel"
+                  name="phone"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="611151620"
+                  required
+                />
+              </div>
             </label>
 
             <label className="field">
