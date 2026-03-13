@@ -1,0 +1,21 @@
+# AGENTS.md
+
+Objetivo:
+Rediseñar esta web para que sea mucho más moderna, visualmente atractiva, profesional y clara.
+
+Reglas:
+- Mantener el contenido, estructura y mensaje principal de la web original.
+- Mejorar mucho el diseño visual.
+- Hacer la web responsive para móvil y escritorio.
+- Priorizar una apariencia premium, limpia y actual.
+- Usar componentes claros y fáciles de mantener.
+- Antes de terminar, ejecutar build y corregir errores.
+
+Estilo deseado:
+- moderno
+- limpio
+- profesional
+- con buena jerarquía visual
+- con secciones bien espaciadas
+- con botones claros
+- con sensación de marca seria y atractiva
