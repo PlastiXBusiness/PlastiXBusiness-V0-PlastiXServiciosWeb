@@ -7,7 +7,7 @@ const countries = [
   { code: '+57', flag: '🇨🇴', name: 'Colombia' },
   { code: '+54', flag: '🇦🇷', name: 'Argentina' },
   { code: '+56', flag: '🇨🇱', name: 'Chile' },
-  { code: '+51', flag: '🇵🇪', name: 'Perú' },
+  { code: '+351', flag: 'PT', name: 'Portugal' },
   { code: '+1', flag: '🇺🇸', name: 'Estados Unidos' },
 ]
 
