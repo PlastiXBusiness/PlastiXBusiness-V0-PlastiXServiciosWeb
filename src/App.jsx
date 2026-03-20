@@ -16,6 +16,7 @@ const audienceItems = [
   "Si no tienes claro cuántos CSR's tienes o dónde están",
   'Si te da miedo equivocarte con billeteras o exchanges',
   'Si quieres dejarlo listo y olvidarte',
+  'Si quieres acompañamiento, alguien que te resuelva dudas y te lleve la parte técnica',
 ]
 
 const benefitCards = [
@@ -192,14 +193,13 @@ function App() {
           <div className="hero-glow hero-glow-left"></div>
 
           <div className="hero-content">
-            <span className="section-chip">Pago único: 47€ · Sin mensualidades</span>
             <h1>
-              Deja tus <span>CSR&apos;s listos</span> y seguros (sin comerte la cabeza)
+              Deja tus <span>CSR&apos;s listos</span> y seguros
             </h1>
             <p>
               Te ayudamos a saber cuántos tienes y dónde están, dejamos tu cuenta
               preparada (KYC + seguridad) y te damos soporte para que el día que
-              necesites hacer algo, no tengas sustos.
+              necesites hacer moverlos o venderlos, no tengas sustos.
             </p>
 
             <div className="hero-actions">
@@ -217,34 +217,22 @@ function App() {
               <span>Servicio único</span>
               <strong>Lo dejas listo una vez y sabes a quién escribir si lo necesitas.</strong>
             </div>
-            <div className="panel-card panel-card-bottom">
-              <span>Sin checkout</span>
-              <strong>Nos escribes por WhatsApp y luego te decimos los pasos por Bizum.</strong>
-            </div>
           </div>
         </section>
 
         <section className="section light-section audience-section">
           <div className="section-heading center narrow">
             <span className="section-label">¿Para quién es?</span>
-            <h2>Para gente que quiere dejar esto claro, seguro y fuera de su cabeza</h2>
           </div>
 
           <div className="audience-grid">
             <div className="audience-card">
+              <span className="mini-title">Esto es para ti si...</span>
               <ul className="audience-list">
                 {audienceItems.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </div>
-
-            <div className="audience-card audience-card-muted">
-              <span className="mini-title">No es para ti si…</span>
-              <p>
-                Si buscas consejos de inversión o que te digamos cuándo vender (no
-                hacemos eso).
-              </p>
             </div>
           </div>
         </section>
@@ -287,22 +275,9 @@ function App() {
               </li>
             ))}
           </ul>
-        </section>
-
-        <section className="section pricing-section" id="precio">
-          <div className="section-heading center narrow">
-            <span className="section-label accent">Precio</span>
-            <h2>47€ (pago único)</h2>
-            <p>Sin mensualidades. Nos escribes por WhatsApp y te decimos los pasos.</p>
-          </div>
-
-          <div className="single-price-card">
-            <span className="single-price-label">Servicio técnico / operativo</span>
-            <div className="single-price-value">47€</div>
-            <p>
-              Te atendemos por WhatsApp, revisamos tu caso y después el pago se hace
-              por Bizum. Sin checkout y sin líos raros.
-            </p>
+          <div className="single-price-card" id="precio">
+            <span className="single-price-label">Precio</span>
+            <div className="single-price-value">47€ (pago único)</div>
             <a className="hero-button solid" href="#contacto">
               Escríbenos por WhatsApp
             </a>
