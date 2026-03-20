@@ -11,85 +11,94 @@ const countries = [
   { code: '+1', flag: '🇺🇸', name: 'Estados Unidos' },
 ]
 
-const highlights = [
+const audienceItems = [
+  "Si tienes CSR's desde hace tiempo y quieres tenerlo todo claro",
+  "Si no tienes claro cuántos CSR's tienes o dónde están",
+  'Si te da miedo equivocarte con billeteras o exchanges',
+  'Si quieres dejarlo listo y olvidarte',
+]
+
+const benefitCards = [
   {
-    title: 'Acceso',
-    description: 'Migración de cuenta a Corsair Connect (si no se ha hecho previamente)',
-    icon: 'key',
-  },
-  {
-    title: 'Estado',
-    description: 'Configuración total de tu cuenta con onboarding incluido.',
-    icon: 'pulse',
-  },
-  {
-    title: 'Activos',
-    description: 'Control y cálculo exacto de tus créditos de plástico.',
+    title: 'Te decimos cuánto tienes',
+    description: "Vemos cuántos CSR/CSR25/CSR26 tienes y dónde están.",
+    example: "Así no vuelves a estar con 'creo que tengo X…'.",
     icon: 'wallet',
   },
   {
-    title: 'Gestión',
-    description: 'Configuración de seguridad para tus créditos de plástico.',
+    title: 'Dejamos tu cuenta lista',
+    description:
+      'Revisamos contigo la verificación KYC y lo dejamos preparado para que no se atasque cuando lo necesites.',
+    example: "El típico 'me falta un paso'… lo evitamos.",
+    icon: 'pulse',
+  },
+  {
+    title: 'Lo dejamos todo seguro',
+    description:
+      'Activamos y revisamos 2FA y seguridad para que no pierdas el acceso y puedas hacer retiros.',
+    example: 'Nada de sustos de retiros bloqueados.',
     icon: 'shield',
   },
-]
-
-const solutionItems = [
-  'Auditoría completa de tu cuenta y activos',
-  'Migración técnica sin interrupciones',
-  'Verificación de identidad (KYC técnico)',
-  'Visibilidad total de tus créditos de plástico',
-  'Proceso guiado sin complicaciones',
-  'Información al día de noticias y cambios',
-]
-
-const plans = [
   {
-    title: 'Análisis y Configuración',
-    price: '50€',
-    detail: 'Pago único',
-    items: [
-      'Análisis de situación',
-      'Recuperación de acceso',
-      'Migración técnica',
-      'Verificación técnica',
-      'Comprobación de créditos de plástico',
-    ],
-    note:
-      'Cuenta preparada y operativa, con total conocimiento de cuántos créditos de plástico tienes y dónde los tienes.',
+    title: 'Tienes a quién preguntar',
+    description:
+      '2 horas de consultas incluidas + grupo de WhatsApp con noticias y cambios.',
+    example: 'Si mañana cambian algo, te enteras y sabes qué hacer.',
+    icon: 'chat',
+  },
+]
+
+const includeItems = [
+  "Te ayudamos a localizar todos tus CSR's y en qué cantidad",
+  'Revisión y preparación del KYC (si aplica)',
+  'Seguridad: 2FA + recomendaciones + recuperación',
+  '2 horas de consultas para tus dudas',
+  'Grupo de WhatsApp con noticias y cambios importantes',
+  'Acceso anticipado a recursos internos (documentos, investigación, normativas explicadas fácil)',
+  'Acceso anticipado a herramientas (beta) que lancemos para facilitar la gestión',
+]
+
+const steps = [
+  'Nos escribes por WhatsApp',
+  'Revisamos tu caso contigo y lo dejamos todo listo',
+  'Te damos acceso al grupo + recursos + tus 2 horas de consultas',
+]
+
+const faqs = [
+  {
+    question: '¿Esto es asesoría financiera?',
+    answer: 'No. Esto es ayuda técnica y operativa para dejar tus CSR’s listos, claros y bien configurados.',
   },
   {
-    title: 'Gestión Activa',
-    detailTop: 'Extensión del plan anterior',
-    requirement: 'Requiere haber contratado Análisis y Configuración (50€)',
-    price: '27€',
-    detail: '/ mes',
-    featured: true,
-    items: [
-      'Seguimiento de actualizaciones del sistema',
-      'Gestión activa de cuenta',
-      'Soporte prioritario',
-      'Asistencia técnica continua',
-      'Información sobre cambios en la plataforma',
-      'Control de tus créditos de plástico',
-      'Ayuda a la hora de vender o comprar',
-      'Avisos de estado del mercado y precio',
-    ],
+    question: '¿Tengo que saber de blockchain o mercados de cryptomonedas?',
+    answer: 'No. La idea es justo la contraria: que no tengas que meterte a aprender todo eso para dejarlo bien hecho.',
+  },
+  {
+    question: '¿Cuánto tardáis?',
+    answer: 'Normalmente entre 24 y 72 horas, según el caso y lo que ya tengas hecho.',
+  },
+  {
+    question: '¿Qué incluyen las 2 horas?',
+    answer:
+      'Incluyen dudas técnicas, operativas, del negocio de Corsair y Corsair Connect, y dudas sobre tus CSR para que no vayas a ciegas.',
+  },
+  {
+    question: '¿El grupo de WhatsApp es soporte 1:1 ilimitado?',
+    answer:
+      'No. El grupo es para noticias, cambios importantes y dudas generales. El soporte 1:1 va dentro del servicio y de las 2 horas incluidas.',
+  },
+  {
+    question: '¿Qué son los recursos internos?',
+    answer:
+      'Son documentos y guías que iremos sacando para que entiendas cambios y la evolución de todo sin líos ni tecnicismos raros.',
   },
 ]
 
 const whatsappNumber = '34694200966'
 const defaultCountry = countries[0]
+const serviceName = 'Servicio técnico CSR (47€ · pago único)'
 
 function HighlightIcon({ icon }) {
-  if (icon === 'key') {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14 3a7 7 0 1 0 4.95 11.95L21 17v2h-2v2h-3v-3.17l-1.05-1.05A7 7 0 0 0 14 3Zm0 3a4 4 0 1 1 0 8a4 4 0 0 1 0-8Z" />
-      </svg>
-    )
-  }
-
   if (icon === 'pulse') {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -107,6 +116,14 @@ function HighlightIcon({ icon }) {
     )
   }
 
+  if (icon === 'chat') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5Z" />
+      </svg>
+    )
+  }
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12 3l7 3v5c0 4.5-2.7 7.9-7 10c-4.3-2.1-7-5.5-7-10V6l7-3Z" />
@@ -120,7 +137,6 @@ function App() {
     name: '',
     countryCode: defaultCountry.code,
     phone: '',
-    service: 'Análisis y Configuración (50€ - Pago único)',
     message: '',
   })
 
@@ -137,13 +153,18 @@ function App() {
 
     const text = [
       'Hola, vengo desde la web de PlastiX.',
+      `Servicio: ${serviceName}`,
       `Nombre: ${formData.name}`,
       `WhatsApp / Teléfono: ${formData.countryCode}${formData.phone}`,
-      `Servicio de interés: ${formData.service}`,
-      `Mensaje sobre mi situación: ${formData.message}`,
+      `Consulta: ${formData.message}`,
+      'Entiendo que el pago se hace por Bizum después y que no hay checkout en la web.',
     ].join('\n')
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
+      '_blank',
+      'noopener,noreferrer',
+    )
   }
 
   return (
@@ -154,12 +175,13 @@ function App() {
         </a>
 
         <nav className="main-nav" aria-label="Principal">
-          <a href="#servicios">Servicios</a>
+          <a href="#incluye">Qué incluye</a>
+          <a href="#precio">Precio</a>
           <a href="#contacto">Contacto</a>
         </nav>
 
         <a className="header-cta" href="#contacto">
-          Contactar
+          Escríbenos por WhatsApp
         </a>
       </header>
 
@@ -170,66 +192,95 @@ function App() {
           <div className="hero-glow hero-glow-left"></div>
 
           <div className="hero-content">
-            <span className="section-chip">Gestión Técnica Profesional</span>
+            <span className="section-chip">Pago único: 47€ · Sin mensualidades</span>
             <h1>
-              Ten todos tus <span>créditos de plástico</span> bajo control con{' '}
-              <em>PlastiX</em>
+              Deja tus <span>CSR&apos;s listos</span> y seguros (sin comerte la cabeza)
             </h1>
             <p>
-              Si posees créditos de plástico en Amplivo desde hace años, te ayudamos
-              a recuperar el acceso, realizar la migración técnica y asegurar tu
-              cuenta de forma profesional.
+              Te ayudamos a saber cuántos tienes y dónde están, dejamos tu cuenta
+              preparada (KYC + seguridad) y te damos soporte para que el día que
+              necesites hacer algo, no tengas sustos.
             </p>
-            <a className="hero-button" href="#servicios">
-              Ver más
-            </a>
+
+            <div className="hero-actions">
+              <a className="hero-button solid" href="#contacto">
+                Escríbenos por WhatsApp
+              </a>
+              <a className="hero-button" href="#incluye">
+                Ver qué incluye
+              </a>
+            </div>
           </div>
 
           <div className="hero-panel" aria-hidden="true">
             <div className="panel-card panel-card-top">
-              <span>Gestión Técnica Profesional</span>
-              <strong>Recuperación, migración y seguridad de tus créditos de plástico.</strong>
+              <span>Servicio único</span>
+              <strong>Lo dejas listo una vez y sabes a quién escribir si lo necesitas.</strong>
             </div>
             <div className="panel-card panel-card-bottom">
-              <span>PlastiX</span>
-              <strong>Control total y visibilidad completa de tu cuenta.</strong>
+              <span>Sin checkout</span>
+              <strong>Nos escribes por WhatsApp y luego te decimos los pasos por Bizum.</strong>
+            </div>
+          </div>
+        </section>
+
+        <section className="section light-section audience-section">
+          <div className="section-heading center narrow">
+            <span className="section-label">¿Para quién es?</span>
+            <h2>Para gente que quiere dejar esto claro, seguro y fuera de su cabeza</h2>
+          </div>
+
+          <div className="audience-grid">
+            <div className="audience-card">
+              <ul className="audience-list">
+                {audienceItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="audience-card audience-card-muted">
+              <span className="mini-title">No es para ti si…</span>
+              <p>
+                Si buscas consejos de inversión o que te digamos cuándo vender (no
+                hacemos eso).
+              </p>
             </div>
           </div>
         </section>
 
         <section className="section light-section">
           <div className="section-heading center">
-            <h2>Necesitas tener todo configurado, bajo control y al día?</h2>
-            <div className="heading-line"></div>
+            <span className="section-label">Qué te llevas</span>
+            <h2>Lo importante, explicado fácil</h2>
           </div>
 
           <div className="highlights-grid">
-            {highlights.map((item) => (
+            {benefitCards.map((item) => (
               <article className="highlight-card" key={item.title}>
                 <div className="highlight-icon">
                   <HighlightIcon icon={item.icon} />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+                <p className="card-example">{item.example}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section solution-section">
+        <section className="section solution-section" id="incluye">
           <div className="section-heading center narrow">
-            <span className="section-label">La Solución</span>
-            <h2>Expertos en el modelo Corsair Connect</h2>
+            <span className="section-label">Qué incluye</span>
+            <h2>Todo lo necesario para dejarlo bien hecho</h2>
             <p>
-              Nuestro servicio se encarga de todo el proceso técnico para que puedas
-              volver a tener control total sobre tus créditos de plástico. Nos
-              ocupamos de la auditoría, migración técnica, verificación de identidad
-              y visibilidad completa, todo sin complicaciones para ti.
+              Esto no es para que estés pendiente cada día: es para dejarlo listo y
+              saber que tienes soporte cuando de verdad lo necesites.
             </p>
           </div>
 
           <ul className="solution-grid">
-            {solutionItems.map((item) => (
+            {includeItems.map((item) => (
               <li className="solution-item" key={item}>
                 <span className="solution-check">+</span>
                 <span>{item}</span>
@@ -238,52 +289,65 @@ function App() {
           </ul>
         </section>
 
-        <section className="section pricing-section" id="servicios">
-          <div className="section-heading center">
-            <span className="section-label accent">Servicios y Tarifas</span>
-            <h2>Elige tu plan de gestión técnica</h2>
-            <div className="heading-line accent-line"></div>
+        <section className="section pricing-section" id="precio">
+          <div className="section-heading center narrow">
+            <span className="section-label accent">Precio</span>
+            <h2>47€ (pago único)</h2>
+            <p>Sin mensualidades. Nos escribes por WhatsApp y te decimos los pasos.</p>
           </div>
 
-          <div className="pricing-grid">
-            {plans.map((plan) => (
-              <article
-                className={`pricing-card${plan.featured ? ' pricing-card-featured' : ''}`}
-                key={plan.title}
-              >
-                {plan.featured && <div className="badge">Recomendado</div>}
-                <h3>{plan.title}</h3>
-                {plan.detailTop && <p className="plan-top-copy">{plan.detailTop}</p>}
-                {plan.requirement && <p className="plan-requirement">{plan.requirement}</p>}
-                <div className="price-block">
-                  <span className="price">{plan.price}</span>
-                  <span className="price-detail">{plan.detail}</span>
-                </div>
-                <div className="plan-divider"></div>
-                <ul className="plan-list">
-                  {plan.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                {plan.note && <p className="plan-note">{plan.note}</p>}
+          <div className="single-price-card">
+            <span className="single-price-label">Servicio técnico / operativo</span>
+            <div className="single-price-value">47€</div>
+            <p>
+              Te atendemos por WhatsApp, revisamos tu caso y después el pago se hace
+              por Bizum. Sin checkout y sin líos raros.
+            </p>
+            <a className="hero-button solid" href="#contacto">
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+        </section>
+
+        <section className="section light-section">
+          <div className="section-heading center narrow">
+            <span className="section-label">Cómo funciona</span>
+            <h2>Así de simple</h2>
+          </div>
+
+          <div className="steps-grid">
+            {steps.map((step, index) => (
+              <article className="step-card" key={step}>
+                <span className="step-number">0{index + 1}</span>
+                <p>{step}</p>
               </article>
             ))}
           </div>
+        </section>
 
-          <div className="pricing-action">
-            <a className="hero-button solid" href="#contacto">
-              Contactar ahora
-            </a>
+        <section className="section solution-section faq-section">
+          <div className="section-heading center narrow">
+            <span className="section-label">FAQ</span>
+            <h2>Dudas normales antes de escribir</h2>
+          </div>
+
+          <div className="faq-grid">
+            {faqs.map((faq) => (
+              <article className="faq-card" key={faq.question}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </article>
+            ))}
           </div>
         </section>
 
         <section className="section contact-section" id="contacto">
           <div className="section-heading center narrow">
             <span className="section-label">Contacto</span>
-            <h2>Contáctanos</h2>
+            <h2>Cuéntanos tu caso y te contestamos por WhatsApp</h2>
             <p>
-              Solo responderemos consultas relacionadas con el servicio de gestión
-              técnica.
+              Esto es un servicio técnico y operativo. Si te encaja, nos escribes y
+              te guiamos sin marearte.
             </p>
           </div>
 
@@ -295,7 +359,7 @@ function App() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Tu nombre completo"
+                placeholder="Tu nombre"
                 required
               />
             </label>
@@ -331,36 +395,19 @@ function App() {
             </label>
 
             <label className="field">
-              <span>Tipo de servicio</span>
-              <select
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                required
-              >
-                <option value="Análisis y Configuración (50€ - Pago único)">
-                  Análisis y Configuración (50€ - Pago único)
-                </option>
-                <option value="Gestión Activa (27€/ mes) + Análisis y Configuración (50€ - Pago único)">
-                  Gestión Activa (27€/ mes) + Análisis y Configuración (50€ - Pago único)
-                </option>
-              </select>
-            </label>
-
-            <label className="field">
-              <span>Mensaje sobre tu situación</span>
+              <span>Cuéntanos tu caso</span>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Describe brevemente tu situación con la cuenta..."
+                placeholder="Cuéntanos rápido: ¿tienes KYC hecho? ¿dónde tienes los CSR? ¿qué es lo que más te preocupa?"
                 rows="4"
                 required
               />
             </label>
 
             <button className="whatsapp-button" type="submit">
-              Enviar por WhatsApp
+              Hablar por WhatsApp
             </button>
           </form>
         </section>
@@ -380,26 +427,22 @@ function App() {
         <div className="footer-top">
           <div>
             <span className="footer-brand">PlastiX</span>
-            <p>Gestión Técnica Profesional</p>
+            <p>Servicio técnico CSR · Pago único 47€</p>
           </div>
 
           <nav className="footer-nav" aria-label="Footer">
-            <a href="#servicios">Servicios</a>
+            <a href="#incluye">Qué incluye</a>
+            <a href="#precio">Precio</a>
             <a href="#contacto">Contacto</a>
           </nav>
         </div>
 
         <div className="footer-legal">
           <p>
-            <strong>AVISO LEGAL:</strong> Este servicio es exclusivamente de
-            asistencia técnica y gestión operativa de cuentas. En ningún caso
-            constituye consejo de inversión ni gestión activa de capital. No
-            realizamos asesoramiento financiero ni gestión de fondos de terceros.
+            Servicio técnico y operativo. No ofrecemos asesoramiento financiero,
+            fiscal o legal. No garantizamos resultados económicos. El usuario es
+            responsable final de sus decisiones y operaciones.
           </p>
-        </div>
-
-        <div className="footer-copy">
-          <p>© 2026 PlastiX. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
