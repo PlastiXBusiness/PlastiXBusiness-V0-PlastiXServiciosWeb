@@ -259,28 +259,44 @@ function App() {
 
         <section className="section solution-section" id="incluye">
           <div className="section-heading center narrow">
-            <span className="section-label">Qué incluye</span>
-            <h2>Todo lo necesario para dejarlo bien hecho</h2>
+            <span className="section-label">Qué incluye + precio</span>
+            <h2>Lo que te llevas por 47€ y por qué tiene sentido pagarlo una vez</h2>
             <p>
               Esto no es para que estés pendiente cada día: es para dejarlo listo y
               saber que tienes soporte cuando de verdad lo necesites.
             </p>
           </div>
 
-          <ul className="solution-grid">
-            {includeItems.map((item) => (
-              <li className="solution-item" key={item}>
-                <span className="solution-check">+</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="single-price-card" id="precio">
-            <span className="single-price-label">Precio</span>
-            <div className="single-price-value">47€ (pago único)</div>
-            <a className="hero-button solid" href="#contacto">
-              Escríbenos por WhatsApp
-            </a>
+          <div className="pricing-section-shell" id="precio">
+            <div className="pricing-includes-panel">
+              <span className="mini-title">Qué incluye exactamente</span>
+              <ul className="solution-grid">
+                {includeItems.map((item) => (
+                  <li className="solution-item" key={item}>
+                    <span className="solution-check">+</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <aside className="single-price-card">
+              <span className="single-price-label">Pago único</span>
+              <div className="single-price-value">47€</div>
+              <p className="single-price-copy">
+                Pagas una vez y te llevas la parte técnica resuelta, soporte para tus
+                dudas y todo bien preparado para no improvisar el día que tengas que
+                moverlo.
+              </p>
+              <ul className="single-price-points">
+                <li>Sin mensualidades</li>
+                <li>Sin checkout raro</li>
+                <li>Te atendemos por WhatsApp</li>
+              </ul>
+              <a className="hero-button solid" href="#contacto">
+                Escríbenos por WhatsApp
+              </a>
+            </aside>
           </div>
         </section>
 
