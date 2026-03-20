@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
 :root {
-  font-family:
-    Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bg-top: #fff4e4;
+  --bg-bottom: #f7d9bd;
+  --panel: rgba(255, 249, 241, 0.94);
+  --border-color: rgba(90, 43, 13, 0.12);
+  font-family: 'Instrument Sans', 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #e8edf7;
+  color: #2c1b10;
   background:
-    radial-gradient(circle at top, rgba(51, 109, 205, 0.3), transparent 30%),
-    linear-gradient(180deg, #04060c 0%, #09101c 100%);
+    radial-gradient(circle at top left, rgba(255, 195, 92, 0.35), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(199, 58, 47, 0.12), transparent 24%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,29 +33,30 @@ body {
 }
 
 body,
-input,
-textarea,
 button,
+textarea,
+select,
 a {
   font: inherit;
 }
 
 a,
 button,
-input,
-textarea {
+textarea,
+select {
   transition:
     color 180ms ease,
     background-color 180ms ease,
     border-color 180ms ease,
-    box-shadow 180ms ease;
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid rgba(106, 168, 255, 0.45);
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(220, 91, 49, 0.28);
   outline-offset: 3px;
 }
 
